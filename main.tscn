@@ -1,7 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://dfwoo37bo5l5o"]
+[gd_scene load_steps=7 format=3 uid="uid://dfwoo37bo5l5o"]
 
 [ext_resource type="Texture2D" uid="uid://bx3777bvgdkh5" path="res://icon.svg" id="1_0xm2m"]
 [ext_resource type="Script" uid="uid://c6mb4weyjj2gf" path="res://main.gd" id="1_h2yge"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0xm2m"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+
+[sub_resource type="Theme" id="Theme_h2yge"]
+Panel/styles/panel = SubResource("StyleBoxFlat_0xm2m")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h2yge"]
 texture = ExtResource("1_0xm2m")
@@ -15,5 +30,33 @@ sources/0 = SubResource("TileSetAtlasSource_h2yge")
 [node name="Main" type="Node"]
 script = ExtResource("1_h2yge")
 
-[node name="TileMapLayer" type="TileMapLayer" parent="."]
+[node name="MapEditor" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 994.0
+offset_top = 129.0
+offset_right = 434.0
+offset_bottom = -75.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_h2yge")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="MapEditor"]
 tile_set = SubResource("TileSet_1bvp3")
+
+[node name="Window" type="Window" parent="."]
+title = "Map Editor"
+initial_position = 1
+size = Vector2i(256, 240)
+transient = true
+sharp_corners = true
+min_size = Vector2i(256, 240)
+keep_title_visible = true
+content_scale_mode = 1
+content_scale_aspect = 1
+content_scale_stretch = 1
+
+[node name="SubViewport" type="SubViewport" parent="Window"]
+canvas_item_default_texture_filter = 0
+size = Vector2i(256, 240)
