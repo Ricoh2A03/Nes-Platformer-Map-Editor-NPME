@@ -34,29 +34,13 @@ script = ExtResource("1_h2yge")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 994.0
-offset_top = 129.0
-offset_right = 434.0
-offset_bottom = -75.0
+offset_left = 280.0
+offset_top = 88.0
+offset_right = -280.0
+offset_bottom = -116.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_h2yge")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="MapEditor"]
 tile_set = SubResource("TileSet_1bvp3")
-
-[node name="Window" type="Window" parent="."]
-title = "Map Editor"
-initial_position = 1
-size = Vector2i(256, 240)
-transient = true
-sharp_corners = true
-min_size = Vector2i(256, 240)
-keep_title_visible = true
-content_scale_mode = 1
-content_scale_aspect = 1
-content_scale_stretch = 1
-
-[node name="SubViewport" type="SubViewport" parent="Window"]
-canvas_item_default_texture_filter = 0
-size = Vector2i(256, 240)
